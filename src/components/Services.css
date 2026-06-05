@@ -1,0 +1,279 @@
+.services-section {
+  background-color: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.services-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--spacing-lg) auto;
+}
+
+.services-tag {
+  color: var(--color-accent);
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--spacing-xs);
+  display: block;
+}
+
+/* Tabs */
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--spacing-sm);
+}
+
+.tab-btn {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-light);
+  border-bottom: 2px solid transparent;
+  transition: var(--transition-fast);
+}
+
+.tab-btn:hover {
+  color: var(--color-text-primary);
+}
+
+.tab-btn.active {
+  color: var(--color-secondary);
+  border-bottom-color: var(--color-secondary);
+}
+
+/* Bento Grid Services */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+}
+
+.service-card {
+  padding: var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  transition: var(--transition-normal);
+  height: 100%;
+}
+
+.service-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.service-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+  border-radius: var(--radius-sm);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.service-card-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.service-card-description {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  flex-grow: 1;
+}
+
+.service-outcome {
+  display: inline-flex;
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.6rem;
+  background-color: var(--color-bg-alt);
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-sm);
+}
+
+.service-card:hover .service-outcome {
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+/* Bento Grid Sizing Tweak */
+.bento-wide {
+  grid-column: span 2;
+}
+
+.bento-full {
+  grid-column: span 3;
+}
+
+/* Interactive Lead routing pipeline display inside services bento */
+.pipeline-card {
+  grid-column: span 3;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.pipeline-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.pipeline-flow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: var(--spacing-sm) 0;
+  padding: 0 var(--spacing-xl);
+}
+
+.pipeline-track {
+  position: absolute;
+  top: 50%;
+  left: var(--spacing-xl);
+  right: var(--spacing-xl);
+  height: 4px;
+  background-color: var(--color-border);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.pipeline-dot {
+  position: absolute;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-full);
+  box-shadow: 0 0 10px var(--color-accent);
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  animation: flowLead 6s infinite linear;
+}
+
+.pipeline-node {
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-bg-secondary);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  z-index: 3;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+  position: relative;
+}
+
+.pipeline-node-label {
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--color-text-light);
+}
+
+.pipeline-card:hover .pipeline-node {
+  border-color: var(--color-accent);
+}
+
+@keyframes flowLead {
+  0% { left: 8%; opacity: 0; }
+  5% { opacity: 1; }
+  90% { opacity: 1; }
+  95% { left: 92%; opacity: 0; }
+  100% { left: 92%; opacity: 0; }
+}
+
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .bento-wide, .bento-full, .pipeline-card {
+    grid-column: span 1;
+  }
+  
+  .pipeline-flow {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding: 0;
+    align-items: center;
+  }
+  
+  .pipeline-track, .pipeline-dot {
+    display: none;
+  }
+  
+  .pipeline-node-label {
+    position: static;
+    margin-top: 4px;
+  }
+  
+  .pipeline-node {
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-sm);
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabs-container {
+    flex-direction: column;
+    align-items: stretch;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  .tab-btn {
+    border-bottom: none;
+    border-left: 2px solid transparent;
+    padding: 0.5rem var(--spacing-sm);
+    text-align: left;
+  }
+  
+  .tab-btn.active {
+    border-left-color: var(--color-accent);
+  }
+}
