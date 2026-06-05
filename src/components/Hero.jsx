@@ -48,9 +48,9 @@ export default function Hero() {
             </h1>
 
             <p className="hero-desc">
-              We connect your Facebook posts to clean mobile inventory pages,
-              keep your Google Business Profile full of fresh reviews, and route
-              every buyer inquiry directly to your cell phone — no complicated tech required.
+              We build websites, sales funnels, CRM pipelines, and Meta ad campaigns
+              that bring local buyers to your door — then keep them coming back. One
+              team handling everything from your Google profile to your lot flags.
             </p>
 
             <div className="hero-stats">

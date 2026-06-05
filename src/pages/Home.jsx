@@ -264,10 +264,11 @@ export default function Home() {
               <span className="advantage-number" aria-hidden="true">01</span>
               <h3 className="advantage-heading">Built on a Handshake</h3>
               <p className="advantage-copy">
-                In Mississippi, a business is built on a handshake and kept on a promise. We don't
-                hide behind automated email ticket portals. We meet you face-to-face at
-                your used car lot, ATV outlet, or appliance store — and align your digital advertising
-                to fit the straightforward, high-integrity way you do business.
+                In Mississippi, business is built on trust. We meet you face-to-face at
+                your lot, store, or dealership — then build the digital infrastructure
+                around the way you actually work. That means websites, CRM pipelines,
+                funnels, and ad campaigns that feel like a natural extension of your
+                business — not a foreign tech layer dropped on top of it.
               </p>
             </div>
 
@@ -284,11 +285,12 @@ export default function Home() {
 
             <div className="advantage-block animate-fade-in" style={{ animationDelay: '0.20s' }}>
               <span className="advantage-number" aria-hidden="true">03</span>
-              <h3 className="advantage-heading">Leads Direct to Your Cell Phone</h3>
+              <h3 className="advantage-heading">Every Lead Straight to Your Phone</h3>
               <p className="advantage-copy">
-                You shouldn't have to log into complex software dashboards to find your leads. We
-                route every web inquiry, social media message, and print caller phone number straight
-                to your cell phone as a simple text notification — so you stay on the sales floor.
+                We build your CRM so that every web inquiry, Facebook message, and
+                funnel submission fires a direct text to your cell phone the moment it
+                comes in — no dashboard hunting, no missed follow-ups. Your pipeline
+                stays full and your response time stays under two minutes.
               </p>
             </div>
           </div>
