@@ -13,7 +13,7 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 65% 55% at 65% 45%, rgba(153, 27, 27, 0.13) 0%, transparent 65%),
+    radial-gradient(ellipse 65% 55% at 65% 45%, rgba(99, 11, 21, 0.13) 0%, transparent 65%),
     radial-gradient(ellipse 45% 40% at 8%  80%, rgba(146, 64, 14, 0.09) 0%, transparent 60%),
     linear-gradient(170deg, #0A0F1A 0%, #111827 100%);
   pointer-events: none;
@@ -44,8 +44,8 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(239, 68, 68, 0.9);
-  background: rgba(153, 27, 27, 0.14);
-  border: 1px solid rgba(153, 27, 27, 0.28);
+  background: rgba(99, 11, 21, 0.14);
+  border: 1px solid rgba(99, 11, 21, 0.28);
   padding: 0.3rem 0.85rem;
   border-radius: 999px;
   margin-bottom: 1.5rem;
@@ -232,7 +232,7 @@
   width: 32px;
   height: 32px;
   min-width: 32px;
-  background: var(--color-accent, #991B1B);
+  background: var(--color-accent, #630b15);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -314,8 +314,8 @@
 }
 
 .rc-rank-first {
-  background: rgba(153, 27, 27, 0.05);
-  border: 1px solid rgba(153, 27, 27, 0.13);
+  background: rgba(99, 11, 21, 0.05);
+  border: 1px solid rgba(99, 11, 21, 0.13);
 }
 
 .rc-rank-other {
@@ -325,7 +325,7 @@
 .rc-rank-num {
   font-weight: 800;
   font-size: 0.82rem;
-  color: var(--color-accent, #991B1B);
+  color: var(--color-accent, #630b15);
   min-width: 14px;
   text-align: center;
 }
@@ -362,9 +362,9 @@
 .rc-managed {
   font-size: 0.62rem;
   font-weight: 700;
-  color: var(--color-accent, #991B1B);
-  background: rgba(153, 27, 27, 0.08);
-  border: 1px solid rgba(153, 27, 27, 0.18);
+  color: var(--color-accent, #630b15);
+  background: rgba(99, 11, 21, 0.08);
+  border: 1px solid rgba(99, 11, 21, 0.18);
   padding: 0.18rem 0.45rem;
   border-radius: 4px;
   text-transform: uppercase;
@@ -454,7 +454,7 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #991B1B;
+  background: #630b15;
   flex-shrink: 0;
   opacity: 0.7;
 }

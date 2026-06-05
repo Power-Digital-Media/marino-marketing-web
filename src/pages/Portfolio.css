@@ -16,7 +16,7 @@
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(153, 27, 27, 0.16) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(99, 11, 21, 0.16) 0%, transparent 70%);
   top: -150px;
   right: -120px;
   pointer-events: none;
@@ -37,8 +37,8 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-accent);
-  background: rgba(153, 27, 27, 0.12);
-  border: 1px solid rgba(153, 27, 27, 0.28);
+  background: rgba(99, 11, 21, 0.12);
+  border: 1px solid rgba(99, 11, 21, 0.28);
   border-radius: var(--radius-full);
   padding: 0.35rem 0.9rem;
   margin-bottom: 1.5rem;
@@ -98,7 +98,7 @@
 }
 
 .portfolio-filter-pill:hover {
-  border-color: rgba(153, 27, 27, 0.30);
+  border-color: rgba(99, 11, 21, 0.30);
   color: var(--color-accent);
   background: var(--color-accent-light);
 }
@@ -107,7 +107,7 @@
   background: var(--color-accent);
   border-color: var(--color-accent);
   color: #FFFFFF;
-  box-shadow: 0 2px 8px rgba(153, 27, 27, 0.30);
+  box-shadow: 0 2px 8px rgba(99, 11, 21, 0.30);
 }
 
 .portfolio-filter-pill--active:hover {
@@ -152,7 +152,7 @@
 }
 
 .product-card:hover::after {
-  border-color: rgba(153, 27, 27, 0.18);
+  border-color: rgba(99, 11, 21, 0.18);
 }
 
 /* Icon area */
@@ -168,7 +168,7 @@
   height: 40px;
   padding: 0.65rem;
   background: var(--color-accent-light);
-  border: 1px solid rgba(153, 27, 27, 0.14);
+  border: 1px solid rgba(99, 11, 21, 0.14);
   border-radius: var(--radius-md);
   color: var(--color-accent);
   flex-shrink: 0;
@@ -271,7 +271,7 @@
   width: 560px;
   height: 560px;
   border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(153, 27, 27, 0.18) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(99, 11, 21, 0.18) 0%, transparent 70%);
   bottom: -200px;
   left: -100px;
   pointer-events: none;
