@@ -366,5 +366,5 @@ a {
 
 @media (max-width: 600px) {
   .bento-grid { grid-template-columns: 1fr; }
-  .bento-col-2, .bento-col-3 { grid-column: span 1; }
+  .bento-col-2, .bento-col-3, .bento-wide { grid-column: span 1; }
 }
