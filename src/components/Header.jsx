@@ -50,11 +50,10 @@ export default function Header() {
     <header className="header">
       <div className="container header-container">
         <Link to="/" className="logo-link" onClick={handleNavClick}>
-          <img
-            src="/assets/logo_mm.png"
-            alt="Marino Marketing — MM Logo"
-            className="logo-img"
-          />
+          <div className="logo-text">
+            Marino<span className="logo-accent">Marketing</span>
+          </div>
+          <div className="logo-subtext">Solutions</div>
         </Link>
 
         {/* Mobile Toggle Button */}

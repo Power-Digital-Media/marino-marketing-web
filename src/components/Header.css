@@ -25,14 +25,32 @@
 .logo-link {
   text-decoration: none;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  line-height: 1;
+  gap: 0.15rem;
 }
 
-.logo-img {
-  height: 44px;
-  width: auto;
-  display: block;
-  object-fit: contain;
+.logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.logo-accent {
+  color: var(--color-accent);
+  margin-left: 0.3em;
+}
+
+.logo-subtext {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
 }
 
 /* ─── Navigation ─── */
