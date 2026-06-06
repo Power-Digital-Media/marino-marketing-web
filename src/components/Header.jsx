@@ -53,7 +53,7 @@ export default function Header() {
           <div className="logo-text">
             Marino<span className="logo-accent">Marketing</span>
           </div>
-          <div className="logo-subtext">Solutions</div>
+          <div className="logo-subtext">Omnichannel Brand Growth</div>
         </Link>
 
         {/* Mobile Toggle Button */}
