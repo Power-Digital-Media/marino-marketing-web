@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   IconMonitor,
@@ -13,12 +13,14 @@ import {
   IconVideo,
   IconFunnel,
   IconLayout,
+  IconDatabase,
 } from '../components/Icons';
 import './Solutions.css';
 
 // Icon lookup map — service id → SVG component
 const SERVICE_ICONS = {
   webdev:       IconMonitor,
+  customapps:   IconDatabase,
   crm:          IconPhone,
   email:        IconMail,
   leads:        IconTruck,
@@ -40,6 +42,8 @@ export default function Solutions() {
   // Widget State Hooks
   const [webdevScore, setWebdevScore] = useState(99);
   const [webdevTesting, setWebdevTesting] = useState(false);
+  const [appDataLoading, setAppDataLoading] = useState(false);
+  const [appData, setAppData] = useState(null);
   const [crmStep, setCrmStep] = useState(0);
   const [crmStatus, setCrmStatus] = useState('Standby');
   const [emailCampaign, setEmailCampaign] = useState('tabloid');
@@ -56,52 +60,38 @@ export default function Solutions() {
   const digitalServices = [
     {
       id: 'webdev',
-      title: 'Fast Mobile Inventories',
-      description: 'Clean, lightning-fast inventory pages built specifically for used car lots, appliance shops, and ATV dealers. Fully optimized for local mobile shoppers and Google search visibility.',
-      outcome: 'Best For: Fast Mobile Loading & Local Search Listings',
+      title: 'High-Velocity Web Design',
+      description: 'We engineer blistering-fast Next.js, React, and Vite web architectures. Built specifically for local retail and automotive dealers, fully optimized for human interaction and search engine visibility.',
+      outcome: 'Best For: Mobile PageSpeed & Google Local Rankings',
       widgetType: 'web'
+    },
+    {
+      id: 'customapps',
+      title: 'Bespoke Custom Applications',
+      description: 'Custom React/Vite/Next.js platforms, database integrations, back-office dashboards, and automated system syncs built to streamline workflows and scale your business.',
+      outcome: 'Best For: Business Automation & Database Integration',
+      widgetType: 'customapps',
+      spanClass: 'bento-wide'
     },
     {
       id: 'crm',
       title: 'Direct SMS Lead Routing',
-      description: 'Never miss a buyer. Website inquiries, contact forms, and Facebook Marketplace quote requests are synced instantly and sent directly to your cell phone via SMS text alerts.',
-      outcome: 'Best For: Handshake Leads & Sales Floor Follow-Ups',
-      widgetType: 'crm',
-      spanClass: 'bento-wide'
-    },
-    {
-      id: 'email',
-      title: 'Customer Text & Follow-Ups',
-      description: 'Automated follow-up texts or email drips sent to auto, tractor, or appliance buyers who request quotes, keeping your listings top-of-mind without manual effort.',
-      outcome: 'Best For: Staying Top-of-Mind with Motivated Buyers',
-      widgetType: 'email'
-    },
-    {
-      id: 'leads',
-      title: 'Facebook Marketplace Sync',
-      description: 'We sync your fresh lot arrivals and listings directly to local Facebook Marketplace feeds, generating motivated local phone calls and texts.',
-      outcome: 'Best For: Used Car, ATV & Equipment Lot Traffic',
-      widgetType: 'leads'
-    },
-    {
-      id: 'gmb',
-      title: 'Google Maps & Facebook Pages',
-      description: 'Weekly posts, photo uploads of new arrivals, and active management of your local Google Maps page to ensure motorists find your lot first.',
-      outcome: 'Best For: Drawing Local Search Visibility & Storefront Traffic',
-      widgetType: 'gmb'
+      description: 'Never miss a buyer. Website inquiries, inventory quote requests, and application form submissions are processed and routed directly to your mobile phone via SMS text alerts.',
+      outcome: 'Best For: Direct Lead Alerts & Fast Sales Follow-Up',
+      widgetType: 'crm'
     },
     {
       id: 'funnel',
-      title: 'Sales Funnels',
-      description: 'Custom multi-step funnels that capture a lead at the top and walk them through to a scheduled call, text reply, or lot visit — all automated. Built specifically for car lots, ATV dealers, and retail shops.',
-      outcome: 'Best For: Turning Cold Traffic into Warm, Ready-to-Buy Leads',
+      title: 'High-Converting Sales Funnels',
+      description: 'Automated multi-step sales funnels designed to qualify leads and guide prospects from cold awareness to booked calls, text replies, or physical lot visits.',
+      outcome: 'Best For: Ad Campaign Traffic & Direct Conversions',
       widgetType: 'funnel'
     },
     {
       id: 'landing',
-      title: 'Landing Pages',
-      description: 'Standalone campaign pages built to convert — for a specific vehicle, promotion, or seasonal sale. No nav, no distractions. Just the offer and a clear call to action that rings your phone.',
-      outcome: 'Best For: Promotion-Specific Campaigns & Ad Traffic',
+      title: 'Campaign Landing Pages',
+      description: 'Dedicated campaign-specific landing pages designed for high conversion. No navigation links or distractions—just your offer and a clear call-to-action that gets results.',
+      outcome: 'Best For: Seasonal Promotions & Target Ad Traffic',
       widgetType: 'landing'
     },
   ];
@@ -161,6 +151,13 @@ export default function Solutions() {
       outcome: 'Best For: High-Reach Awareness & New Buyer Acquisition',
       widgetType: 'metavideo'
     },
+    {
+      id: 'email',
+      title: 'Customer Text & Follow-Ups',
+      description: 'Automated follow-up texts or email drips sent to auto, tractor, or appliance buyers who request quotes, keeping your listings top-of-mind without manual effort.',
+      outcome: 'Best For: Staying Top-of-Mind with Motivated Buyers',
+      widgetType: 'email'
+    },
   ];
 
   const activeServices = activeTab === 'digital' ? digitalServices
@@ -183,6 +180,27 @@ export default function Solutions() {
         setWebdevScore(score);
       }
     }, 25);
+  };
+
+  // Custom App Sync Simulator
+  const runAppDemo = () => {
+    if (appDataLoading) return;
+    setAppDataLoading(true);
+    setAppData(null);
+    setTimeout(() => {
+      setAppData({
+        status: 200,
+        sync: "successful",
+        records: 48,
+        database: "PostgreSQL",
+        payload: {
+          lastSync: "Just now",
+          activePortals: 3,
+          leadPipeline: "Connected"
+        }
+      });
+      setAppDataLoading(false);
+    }, 1500);
   };
 
   // Lead Sim Pipeline
@@ -218,12 +236,48 @@ export default function Solutions() {
       case 'web':
         return (
           <div className="bento-widget web-widget">
-            <div className="web-speed-indicator">
+            <div className="web-speed-indicator" style={{ zIndex: 2 }}>
               <span className={`speed-score ${webdevScore >= 90 ? 'score-green' : ''}`}>{webdevScore}</span>
               <span className="speed-label">Mobile PageSpeed</span>
             </div>
-            <button className="btn-bento-action" onClick={runWebAudit} disabled={webdevTesting}>
+            <div className="bento-widget-overlay-img-wrap">
+              <img src="/assets/nextgen_web.png" alt="Mobile Web Inventory screenshot" className="bento-widget-overlay-img" loading="lazy" />
+            </div>
+            <button className="btn-bento-action" onClick={runWebAudit} disabled={webdevTesting} style={{ zIndex: 2 }}>
               {webdevTesting ? 'Auditing...' : 'Test Speed'}
+            </button>
+          </div>
+        );
+
+      case 'customapps':
+        return (
+          <div className="bento-widget customapps-widget">
+            <div className="api-console-window" style={{ zIndex: 2 }}>
+              <div className="api-console-header">
+                <span className="console-dot red"></span>
+                <span className="console-dot yellow"></span>
+                <span className="console-dot green"></span>
+                <span className="console-title">Database Sync Console</span>
+              </div>
+              <div className="api-console-body">
+                {appDataLoading ? (
+                  <div className="api-loading-state">
+                    <div className="api-spinner"></div>
+                    <span>Synchronizing database collections...</span>
+                  </div>
+                ) : appData ? (
+                  <pre className="api-json-output">
+                    {JSON.stringify(appData, null, 2)}
+                  </pre>
+                ) : (
+                  <div className="api-idle-state">
+                    <span className="api-idle-text">// PostgreSQL connection standby</span>
+                  </div>
+                )}
+              </div>
+            </div>
+            <button className="btn-bento-action" onClick={runAppDemo} disabled={appDataLoading} style={{ zIndex: 2 }}>
+              {appDataLoading ? 'Syncing...' : 'Sync Database'}
             </button>
           </div>
         );
@@ -304,7 +358,10 @@ export default function Solutions() {
       case 'leads':
         return (
           <div className="bento-widget leads-widget">
-            <div className="leads-track">
+            <div className="bento-widget-overlay-img-wrap full-overlay">
+              <img src="/assets/dealer_pipeline.png" alt="Dealer Leads Pipeline Sync screenshot" className="bento-widget-overlay-img" loading="lazy" />
+            </div>
+            <div className="leads-track" style={{ zIndex: 2 }}>
               <div className="leads-item">2021 Chevy Silverado - FB Market Inquiry</div>
               <div className="leads-item">John Deere Utility Tractor - Google Maps Inquiry</div>
               <div className="leads-item">Polaris Sportsman ATV - Website Lead Routed</div>
@@ -316,7 +373,10 @@ export default function Solutions() {
       case 'gmb':
         return (
           <div className="bento-widget gmb-widget-interactive">
-            <div className="star-rating-selector">
+            <div className="bento-widget-overlay-img-wrap full-overlay">
+              <img src="/assets/case_study_google_profile.png" alt="Google Maps search optimization screenshot" className="bento-widget-overlay-img" loading="lazy" />
+            </div>
+            <div className="star-rating-selector" style={{ zIndex: 2 }}>
               {[1, 2, 3, 4, 5].map((star) => (
                 <span
                   key={star}
@@ -327,7 +387,7 @@ export default function Solutions() {
                 </span>
               ))}
             </div>
-            <span className="reviews-counter">Rating: <strong>{gmbRating.toFixed(1)}</strong> ({gmbReviews} reviews)</span>
+            <span className="reviews-counter" style={{ zIndex: 2 }}>Rating: <strong>{gmbRating.toFixed(1)}</strong> ({gmbReviews} reviews)</span>
           </div>
         );
 
@@ -403,7 +463,10 @@ export default function Solutions() {
       case 'flags':
         return (
           <div className="bento-widget flags-widget-interactive">
-            <div className="wind-toggles">
+            <div className="bento-widget-overlay-img-wrap full-overlay">
+              <img src="/assets/case_study_storefront_flags.png" alt="Dealer lot flags physical showcase" className="bento-widget-overlay-img" loading="lazy" />
+            </div>
+            <div className="wind-toggles" style={{ zIndex: 2 }}>
               <button
                 className={`wind-toggle-btn ${windSpeed === 'calm' ? 'active' : ''}`}
                 onClick={() => setWindSpeed('calm')}
@@ -423,7 +486,7 @@ export default function Solutions() {
                 Gale
               </button>
             </div>
-            <div className="flag-visual-container">
+            <div className="flag-visual-container" style={{ zIndex: 2 }}>
               <div className="flagpole"></div>
               <div className={`flag-banner ${windSpeed}`}>
                 <div className="flag-logo-mark">MM</div>
@@ -567,10 +630,10 @@ export default function Solutions() {
       {/* ── Dark Page Hero ── */}
       <section className="solutions-hero">
         <div className="solutions-hero-inner">
-          <span className="solutions-hero-eyebrow">What We Offer</span>
-          <h1 className="solutions-hero-heading">Advertising Built for Mississippi Retailers</h1>
+          <span className="solutions-hero-eyebrow">Solutions Hub</span>
+          <h1 className="solutions-hero-heading">Elite Digital Engineering & Local Marketing</h1>
           <p className="solutions-hero-sub">
-          Simple, straightforward capabilities — digital inventory listings, Meta ad campaigns, and physical storefront presence to capture every local buyer in your market.
+            High-velocity web architectures, bespoke custom software applications, and hyper-targeted advertising campaigns integrated with local physical branding.
           </p>
         </div>
       </section>
@@ -589,7 +652,7 @@ export default function Solutions() {
                 className={`tab-pill-btn ${activeTab === 'digital' ? 'active' : ''}`}
                 onClick={() => setActiveTab('digital')}
               >
-                Digital Sync
+                Digital Systems
               </button>
               <button
                 id="tab-meta"
@@ -598,7 +661,7 @@ export default function Solutions() {
                 className={`tab-pill-btn ${activeTab === 'meta' ? 'active' : ''}`}
                 onClick={() => setActiveTab('meta')}
               >
-                Meta Ad Campaigns
+                Growth Marketing
               </button>
               <button
                 id="tab-physical"
@@ -607,7 +670,7 @@ export default function Solutions() {
                 className={`tab-pill-btn ${activeTab === 'physical' ? 'active' : ''}`}
                 onClick={() => setActiveTab('physical')}
               >
-                Print &amp; Storefront
+                Offline &amp; Local Search
               </button>
             </div>
           </div>

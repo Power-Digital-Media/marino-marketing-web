@@ -33,15 +33,15 @@
   --color-border-focus:   #630b15;
 
   /* ─── Shadows ─── */
-  --shadow-xs:    0 1px 2px rgba(0,0,0,0.05);
-  --shadow-sm:    0 1px 3px rgba(0,0,0,0.07), 0 4px 12px rgba(0,0,0,0.05);
-  --shadow-md:    0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.07);
-  --shadow-lg:    0 8px 20px rgba(0,0,0,0.09), 0 24px 56px rgba(0,0,0,0.09);
-  --shadow-float: 0 16px 40px rgba(0,0,0,0.12), 0 0 0 1px rgba(99,11,21,0.06);
-  --shadow-card-hover: 0 8px 24px rgba(0,0,0,0.11), 0 0 0 1px rgba(99,11,21,0.12);
-  --shadow-inset: inset 0 1px 3px rgba(0,0,0,0.06);
-  --glow-accent:  0 0 24px rgba(99,11,21,0.20);
-  --glow-gold:    0 0 24px rgba(146,64,14,0.18);
+  --shadow-xs:    0 1px 2px rgba(17, 24, 39, 0.04);
+  --shadow-sm:    0 2px 4px rgba(17, 24, 39, 0.03), 0 8px 20px rgba(17, 24, 39, 0.04);
+  --shadow-md:    0 4px 12px rgba(17, 24, 39, 0.05), 0 16px 40px rgba(17, 24, 39, 0.06);
+  --shadow-lg:    0 10px 24px rgba(17, 24, 39, 0.07), 0 32px 70px rgba(17, 24, 39, 0.08);
+  --shadow-float: 0 16px 36px rgba(99, 11, 21, 0.06), 0 1px 2px rgba(0, 0, 0, 0.01), 0 0 0 1px rgba(99, 11, 21, 0.08);
+  --shadow-card-hover: 0 16px 36px rgba(99, 11, 21, 0.08), 0 0 0 1px rgba(99, 11, 21, 0.14);
+  --shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  --glow-accent:  0 0 30px rgba(99, 11, 21, 0.16);
+  --glow-gold:    0 0 30px rgba(146, 64, 14, 0.14);
 
   /* ─── Typography ─── */
   --font-heading: 'Playfair Display', Georgia, serif;
@@ -271,17 +271,17 @@ a {
 }
 
 .btn-primary {
-  background: var(--color-accent);
+  background: linear-gradient(135deg, var(--color-accent) 0%, #7e1220 100%);
   color: var(--color-text-white);
-  border-color: var(--color-accent);
-  box-shadow: 0 2px 8px rgba(99, 11, 21, 0.30);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 14px rgba(99, 11, 21, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .btn-primary:hover {
-  background: var(--color-accent-hover);
+  background: linear-gradient(135deg, var(--color-accent-hover) 0%, var(--color-accent) 100%);
   border-color: var(--color-accent-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(99, 11, 21, 0.40);
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 8px 22px rgba(99, 11, 21, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.20);
 }
 
 .btn-secondary {
@@ -293,9 +293,9 @@ a {
 
 .btn-secondary:hover {
   background: var(--color-bg-secondary);
-  border-color: rgba(99, 11, 21, 0.22);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-sm);
+  border-color: rgba(99, 11, 21, 0.25);
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 4px 12px rgba(17, 24, 39, 0.06);
 }
 
 .btn-ghost {
@@ -312,17 +312,17 @@ a {
 }
 
 .btn-amber {
-  background: var(--color-secondary);
+  background: linear-gradient(135deg, var(--color-secondary) 0%, #a14e13 100%);
   color: var(--color-text-white);
-  border-color: var(--color-secondary);
-  box-shadow: 0 2px 8px rgba(146, 64, 14, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 14px rgba(146, 64, 14, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .btn-amber:hover {
-  background: var(--color-secondary-hover);
+  background: linear-gradient(135deg, var(--color-secondary-hover) 0%, var(--color-secondary) 100%);
   border-color: var(--color-secondary-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(146, 64, 14, 0.38);
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 8px 22px rgba(146, 64, 14, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.20);
 }
 
 /* ─── Animations ─── */
@@ -368,3 +368,23 @@ a {
   .bento-grid { grid-template-columns: 1fr; }
   .bento-col-2, .bento-col-3, .bento-wide { grid-column: span 1; }
 }
+
+/* ─── Tactile Feedback & Accessibility Focus ─── */
+.btn:active,
+.planner-pill:active,
+.tab-pill-btn:active,
+.portfolio-filter-pill:active,
+.service-pill:active {
+  transform: scale(0.97) translateY(0) !important;
+  transition: transform 0.05s var(--ease-out);
+}
+
+.btn:focus-visible,
+.input-field:focus-visible,
+.planner-pill:focus-visible,
+.tab-pill-btn:focus-visible,
+.portfolio-filter-pill:focus-visible {
+  outline: 2.5px solid var(--color-accent);
+  outline-offset: 2.5px;
+}
+

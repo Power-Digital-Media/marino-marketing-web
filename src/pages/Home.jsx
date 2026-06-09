@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Hero from '../components/Hero';
-import { IconMonitor, IconFlag, IconMapPin, IconPhone, IconUsers, IconTag, IconMeta, IconFunnel, IconLayout } from '../components/Icons';
+import { IconMonitor, IconFlag, IconMapPin, IconPhone, IconUsers, IconTag, IconMeta } from '../components/Icons';
 import './Home.css';
 
 export default function Home() {
@@ -76,18 +76,16 @@ export default function Home() {
               <div className="pillar-icon-wrap">
                 <IconMonitor size={22} />
               </div>
-              <h3 className="pillar-title">Websites, Funnels & Landing Pages</h3>
+              <h3 className="pillar-title">Web Design &amp; Custom Apps</h3>
               <p className="pillar-desc">
-                Custom-built inventory pages, dedicated landing pages for promotions,
-                and multi-step sales funnels that turn ad traffic into phone calls and
-                lot visits — automatically.
+                Blistering-fast Next.js architectures and bespoke software applications built to automate workflows, optimize PageSpeed, and dominate local search rankings.
               </p>
               <ul className="pillar-list">
-                <li className="pillar-list-item"><span className="pillar-list-dot"></span>Mobile-Friendly Inventory Pages</li>
-                <li className="pillar-list-item"><span className="pillar-list-dot"></span>Sales Funnels & Lead Capture</li>
-                <li className="pillar-list-item"><span className="pillar-list-dot"></span>Campaign-Specific Landing Pages</li>
-                <li className="pillar-list-item"><span className="pillar-list-dot"></span>Facebook Marketplace Sync</li>
-                <li className="pillar-list-item"><span className="pillar-list-dot"></span>SMS & Direct Phone Leads</li>
+                <li className="pillar-list-item"><span className="pillar-list-dot"></span>High-Velocity Next.js Web Design</li>
+                <li className="pillar-list-item"><span className="pillar-list-dot"></span>Bespoke Custom Software Platforms</li>
+                <li className="pillar-list-item"><span className="pillar-list-dot"></span>PageSpeed Optimization (90+/100)</li>
+                <li className="pillar-list-item"><span className="pillar-list-dot"></span>Client Portals &amp; Database Integrations</li>
+                <li className="pillar-list-item"><span className="pillar-list-dot"></span>Machine-Readable SEO &amp; Schema Setup</li>
               </ul>
               <button className="btn btn-primary pillar-cta" onClick={() => go('/solutions')}>
                 See Digital Packages →
@@ -100,18 +98,16 @@ export default function Home() {
               <div className="pillar-icon-wrap">
                 <IconMeta size={22} />
               </div>
-              <h3 className="pillar-title">Meta, CRM, Email & Video</h3>
+              <h3 className="pillar-title">Growth Marketing &amp; Automation</h3>
               <p className="pillar-desc">
-                We manage your Meta Business Suite, run carousel and video ad campaigns
-                on Facebook and Instagram, build CRM pipelines, and produce video ads
-                that keep your brand in front of local buyers every week.
+                Hyper-targeted Meta and Google campaigns, dynamic inventory catalog ads, and short-form reels integrated with direct mobile SMS lead routing.
               </p>
               <ul className="pillar-list">
-                <li className="pillar-list-item"><span className="pillar-list-dot"></span>Meta Business Suite Management</li>
-                <li className="pillar-list-item"><span className="pillar-list-dot"></span>Product, Carousel & Video Ads</li>
-                <li className="pillar-list-item"><span className="pillar-list-dot"></span>CRM Pipeline & Email Campaigns</li>
-                <li className="pillar-list-item"><span className="pillar-list-dot"></span>Custom Video Creative</li>
-                <li className="pillar-list-item"><span className="pillar-list-dot"></span>Customer Follow-Up Sequences</li>
+                <li className="pillar-list-item"><span className="pillar-list-dot"></span>Meta &amp; Google Ads Account Mgmt</li>
+                <li className="pillar-list-item"><span className="pillar-list-dot"></span>Dynamic Product Catalog Syncing</li>
+                <li className="pillar-list-item"><span className="pillar-list-dot"></span>Direct SMS Lead Routing Alerts</li>
+                <li className="pillar-list-item"><span className="pillar-list-dot"></span>Campaign Sales Funnels &amp; Landing Pages</li>
+                <li className="pillar-list-item"><span className="pillar-list-dot"></span>Automated Follow-Up Sequences</li>
               </ul>
               <button className="btn btn-primary pillar-cta" onClick={() => go('/contact')}>
                 Ask About Campaigns →
@@ -124,16 +120,15 @@ export default function Home() {
               <div className="pillar-icon-wrap">
                 <IconFlag size={22} />
               </div>
-              <h3 className="pillar-title">Physical Presence & Storefront Branding</h3>
+              <h3 className="pillar-title">Offline &amp; Storefront Branding</h3>
               <p className="pillar-desc">
-                Heavy-duty roadside flags, banners, and branded merchandise that pull
-                highway traffic straight through your lot gates.
+                Heavy-duty roadside lot flags, flagpoles, vinyl banners, and custom branded promotional apparel that pull highway traffic straight through your gates.
               </p>
               <ul className="pillar-list">
-                <li className="pillar-list-item"><span className="pillar-list-dot"></span>High-Rise Lot Flags & Flagpoles</li>
-                <li className="pillar-list-item"><span className="pillar-list-dot"></span>Custom Caps, Shirts & Keychains</li>
-                <li className="pillar-list-item"><span className="pillar-list-dot"></span>Vinyl Banners & Roadside Signs</li>
-                <li className="pillar-list-item"><span className="pillar-list-dot"></span>Google Business Profile Mgmt</li>
+                <li className="pillar-list-item"><span className="pillar-list-dot"></span>High-Rise Lot Flags &amp; Flagpoles</li>
+                <li className="pillar-list-item"><span className="pillar-list-dot"></span>Custom Caps, Shirts &amp; Keychains</li>
+                <li className="pillar-list-item"><span className="pillar-list-dot"></span>Vinyl Banners &amp; Roadside Signs</li>
+                <li className="pillar-list-item"><span className="pillar-list-dot"></span>Google Business Profile Management</li>
               </ul>
               <button className="btn btn-primary pillar-cta" onClick={() => go('/portfolio')}>
                 Browse Products →
@@ -147,7 +142,6 @@ export default function Home() {
       <section className="section-padding home-cases-section">
         <div className="container">
           <div className="home-section-header">
-            <span className="home-section-tag">Promotional Products</span>
             <h2 className="home-section-title">Put Your Name on Everything That Stays</h2>
             <p className="home-section-desc">
               Caps, flags, keychains, banners — physical branded products your customers
@@ -157,28 +151,43 @@ export default function Home() {
 
           <div className="grid home-promo-grid">
             <div className="home-promo-card animate-fade-in">
-              <div className="home-promo-icon"><IconFlag size={22} /></div>
-              <h3 className="home-promo-title">Lot Flags &amp; Banners</h3>
-              <p className="home-promo-desc">
-                Heavy-duty American flags, blade banners, and full-color vinyl signs that
-                turn highway traffic into lot walk-ins. Commercial-grade, built to last.
-              </p>
+              <div className="home-promo-image-wrap">
+                <img src="/assets/case_study_storefront_flags.png" alt="High-rise lot flags and blade banners displayed on a commercial lot" className="home-promo-img" loading="lazy" />
+              </div>
+              <div className="home-promo-card-content">
+                <div className="home-promo-icon"><IconFlag size={22} /></div>
+                <h3 className="home-promo-title">Lot Flags &amp; Banners</h3>
+                <p className="home-promo-desc">
+                  Heavy-duty American flags, blade banners, and full-color vinyl signs that
+                  turn highway traffic into lot walk-ins. Commercial-grade, built to last.
+                </p>
+              </div>
             </div>
             <div className="home-promo-card animate-fade-in" style={{ animationDelay: '0.08s' }}>
-              <div className="home-promo-icon"><IconTag size={22} /></div>
-              <h3 className="home-promo-title">Apparel &amp; Headwear</h3>
-              <p className="home-promo-desc">
-                Embroidered caps, polo shirts, and screen-printed tees with your dealership
-                or store logo. Customers wear your name around town — every day.
-              </p>
+              <div className="home-promo-image-wrap">
+                <img src="/assets/apparel_mockup.png" alt="Custom embroidered brand apparel including caps and shirts" className="home-promo-img" loading="lazy" />
+              </div>
+              <div className="home-promo-card-content">
+                <div className="home-promo-icon"><IconTag size={22} /></div>
+                <h3 className="home-promo-title">Apparel &amp; Headwear</h3>
+                <p className="home-promo-desc">
+                  Embroidered caps, polo shirts, and screen-printed tees with your dealership
+                  or store logo. Customers wear your name around town — every day.
+                </p>
+              </div>
             </div>
             <div className="home-promo-card animate-fade-in" style={{ animationDelay: '0.16s' }}>
-              <div className="home-promo-icon"><IconUsers size={22} /></div>
-              <h3 className="home-promo-title">Branded Gifts &amp; Giveaways</h3>
-              <p className="home-promo-desc">
-                Keychains, tumblers, pens, and car magnets engraved or printed with your
-                brand. High-retention items that keep your business top of mind.
-              </p>
+              <div className="home-promo-image-wrap">
+                <img src="/assets/tradewinds_mockup.png" alt="Laser-engraved custom branded keychains and promotional gifts" className="home-promo-img" loading="lazy" />
+              </div>
+              <div className="home-promo-card-content">
+                <div className="home-promo-icon"><IconUsers size={22} /></div>
+                <h3 className="home-promo-title">Branded Gifts &amp; Giveaways</h3>
+                <p className="home-promo-desc">
+                  Keychains, tumblers, pens, and car magnets engraved or printed with your
+                  brand. High-retention items that keep your business top of mind.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -195,7 +204,6 @@ export default function Home() {
         <div className="container">
           <div className="magazine-teaser-block animate-fade-in">
             <div className="magazine-teaser-info">
-              <span className="home-section-tag">Google Local Search</span>
               <h2 className="home-section-title" style={{ textAlign: 'left', marginBottom: '1rem' }}>
                 Show Up When Local Buyers Search
               </h2>
@@ -214,6 +222,9 @@ export default function Home() {
             </div>
 
             <div className="google-spotlight-card">
+              <div className="google-spotlight-image-wrap">
+                <img src="/assets/case_study_google_profile.png" alt="Google Business Profile search view optimization mockup" className="google-spotlight-img" loading="lazy" />
+              </div>
               <div className="google-map-pin-bar">
                 <span className="google-map-logo">
                   <IconMapPin size={12} style={{ verticalAlign: 'middle', marginRight: '4px' }} />
@@ -301,7 +312,6 @@ export default function Home() {
       <section className="section-padding home-planner-section">
         <div className="container">
           <div className="home-section-header">
-            <span className="home-section-tag">Interactive Planner</span>
             <h2 className="home-section-title">Design Your Local Campaign Mix</h2>
             <p className="home-section-desc">
               Select your services to instantly see your weekly shopper reach and launch timeline.

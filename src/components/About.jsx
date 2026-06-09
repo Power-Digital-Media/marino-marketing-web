@@ -1,7 +1,6 @@
-import React from 'react';
 import './About.css';
 
-export default function About({ setCurrentSection }) {
+export default function About() {
   return (
     <section className="about-section section-padding" id="about">
       <div className="container about-grid">

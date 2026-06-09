@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { IconPhone, IconMail, IconMapPin } from '../components/Icons';
 import './Contact.css';
@@ -21,6 +21,7 @@ export default function ContactPage() {
     const servicesParam = params.get('services');
     if (servicesParam) {
       const selected = servicesParam.split(',');
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSelectedServices(selected);
     }
   }, [location.search]);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { IconFlag, IconTag, IconUsers } from '../components/Icons';
 import './Portfolio.css';
@@ -20,6 +20,7 @@ const products = [
       'Commercial-grade nylon flags built for outdoor use at car lots, dealerships, and retail storefronts. Multiple sizes from 3×5 ft up to 5×8 ft.',
     details: ['Rip-stop nylon', 'Double-stitched fly end', '3×5 ft — 5×8 ft sizes'],
     icon: IconFlag,
+    image: '/assets/case_study_storefront_flags.png',
   },
   {
     id: 'feather-banners',
@@ -29,6 +30,7 @@ const products = [
       'Eye-catching roadside banners that snap in light breezes and hold their shape. Great for drawing highway traffic directly to your storefront entrance.',
     details: ['Printed full-color both sides', 'Ground stake & cross base options', 'Custom artwork available'],
     icon: IconFlag,
+    image: '/assets/case_study_car_lot.png',
   },
   {
     id: 'flagpoles',
@@ -38,6 +40,7 @@ const products = [
       'Heavy-duty aluminum sectional flagpoles rated for commercial lots. Includes internal halyard, finial ball, and ground sleeve. Made to last years outdoors.',
     details: ['20 ft & 25 ft heights', 'Satin aluminum finish', 'Internal halyard system'],
     icon: IconFlag,
+    image: '/assets/flagpole_mockup.png',
   },
   {
     id: 'vinyl-banners',
@@ -47,6 +50,7 @@ const products = [
       'Full-color 13 oz vinyl banners for grand openings, sales events, and permanent lot signage. Grommeted and reinforced for wind resistance.',
     details: ['13 oz heavy-duty vinyl', 'Any size, custom layout', 'Hemmed & grommeted'],
     icon: IconFlag,
+    image: '/assets/vinyl_banner_mockup.png',
   },
   // ── Apparel & Headwear ──
   {
@@ -57,6 +61,7 @@ const products = [
       'Structured and unstructured caps embroidered with your dealership logo. Customers keep and wear branded hats for years — keeping your name in front of buyers daily.',
     details: ['Embroidered logo', 'Structured & unstructured styles', 'Adjustable snapback or fitted'],
     icon: IconTag,
+    image: '/assets/branded_cap_mockup.png',
   },
   {
     id: 'polo-shirts',
@@ -66,6 +71,7 @@ const products = [
       'Professional polo shirts embroidered with your business name and logo. Perfect for your sales team to wear on the lot — creating a polished, trustworthy look.',
     details: ['Left-chest embroidery', 'Moisture-wicking fabric options', 'S – 3XL sizing'],
     icon: IconTag,
+    image: '/assets/polo_shirt_mockup.png',
   },
   {
     id: 't-shirts',
@@ -75,6 +81,7 @@ const products = [
       'Quality cotton tees with your logo or event design screen-printed on the front and back. Great for lot giveaways, community events, and staff uniforms.',
     details: ['Front & back print', '100% cotton or 50/50 blend', 'Up to 6 spot colors'],
     icon: IconTag,
+    image: '/assets/tshirt_mockup.png',
   },
   // ── Promo & Branded Gifts ──
   {
@@ -85,6 +92,7 @@ const products = [
       'Laser-engraved or printed metal and acrylic keychains with your dealership logo. Handed out at purchase — customers carry your brand on their keys every single day.',
     details: ['Metal & acrylic options', 'Laser-engraved or full-color print', 'Low minimum quantities'],
     icon: IconUsers,
+    image: '/assets/keychain_mockup.png',
   },
   {
     id: 'pens',
@@ -94,6 +102,7 @@ const products = [
       'Smooth-writing ballpoint pens printed with your business name and phone number. Left at service counters and handed to every buyer — high-visibility, low cost.',
     details: ['Full-color imprint', 'Black or blue ink', 'Bulk pricing available'],
     icon: IconUsers,
+    image: '/assets/pen_mockup.png',
   },
   {
     id: 'tumblers',
@@ -103,6 +112,7 @@ const products = [
       'Stainless steel insulated tumblers laser-engraved with your logo. Customers use these daily for years — one of the highest-retention promotional products available.',
     details: ['20 oz & 30 oz options', 'Laser-engraved logo', 'Double-wall vacuum insulation'],
     icon: IconUsers,
+    image: '/assets/tumbler_mockup.png',
   },
   {
     id: 'koozies',
@@ -112,6 +122,7 @@ const products = [
       'Custom neoprene can koozies printed with your logo. A Southern staple — handed out at events, cookouts, and lot promotions. Affordable and highly visible.',
     details: ['Full-wrap print', 'Neoprene or foam', 'Minimum 24 pcs'],
     icon: IconUsers,
+    image: '/assets/koozie_mockup.png',
   },
   {
     id: 'magnets',
@@ -121,6 +132,7 @@ const products = [
       'Full-color vinyl magnetic signs for dealer vehicles and company trucks. Removable, weather-resistant, and turn every company vehicle into a rolling billboard.',
     details: ['Custom shapes & sizes', 'UV-resistant print', 'Repositionable'],
     icon: IconUsers,
+    image: '/assets/car_magnet_mockup.png',
   },
 ];
 
@@ -173,20 +185,27 @@ export default function PortfolioPage() {
               const IconComp = product.icon;
               return (
                 <article className="product-card" key={product.id}>
-                  <div className="product-card__icon-wrap" aria-hidden="true">
-                    <IconComp size={28} />
-                  </div>
-                  <div className="product-card__body">
-                    <h2 className="product-card__name">{product.name}</h2>
-                    <p className="product-card__desc">{product.description}</p>
-                    <ul className="product-card__details">
-                      {product.details.map((d, i) => (
-                        <li key={i} className="product-card__detail-item">
-                          <span className="product-card__detail-dot" aria-hidden="true" />
-                          {d}
-                        </li>
-                      ))}
-                    </ul>
+                  {product.image && (
+                    <div className="product-card__img-wrap">
+                      <img src={product.image} alt={product.name} className="product-card__img" loading="lazy" />
+                    </div>
+                  )}
+                  <div className="product-card__content">
+                    <div className="product-card__icon-wrap" aria-hidden="true">
+                      <IconComp size={28} />
+                    </div>
+                    <div className="product-card__body">
+                      <h2 className="product-card__name">{product.name}</h2>
+                      <p className="product-card__desc">{product.description}</p>
+                      <ul className="product-card__details">
+                        {product.details.map((d, i) => (
+                          <li key={i} className="product-card__detail-item">
+                            <span className="product-card__detail-dot" aria-hidden="true" />
+                            {d}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                   <div className="product-card__footer">
                     <Link to="/contact" className="product-card__cta">

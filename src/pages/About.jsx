@@ -1,10 +1,8 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   IconMonitor,
   IconPhone,
   IconFlag,
-  IconUsers,
   IconMail,
   IconMegaphone,
   IconVideo,
@@ -23,16 +21,16 @@ const stats = [
 ];
 
 const services = [
-  { icon: IconMonitor,   label: 'Mobile Inventory Pages' },
+  { icon: IconMonitor,   label: 'Elite Web Design' },
+  { icon: IconDatabase,  label: 'Bespoke Custom Apps' },
   { icon: IconPhone,     label: 'SMS Lead Routing' },
-  { icon: IconMonitor,   label: 'Facebook Marketplace Sync' },
+  { icon: IconMeta,      label: 'Growth Marketing & Ads' },
   { icon: IconMegaphone, label: 'Google Business Profile' },
-  { icon: IconDatabase,  label: 'CRM Pipeline Setup' },
-  { icon: IconMail,      label: 'Email Campaigns' },
+  { icon: IconDatabase,  label: 'CRM Pipeline Automation' },
+  { icon: IconMail,      label: 'Customer Text Follow-Ups' },
   { icon: IconMeta,      label: 'Meta Business Suite Mgmt' },
-  { icon: IconMeta,      label: 'Meta Carousel & Video Ads' },
   { icon: IconVideo,     label: 'Video Ads & Creative' },
-  { icon: IconFunnel,    label: 'Sales Funnels' },
+  { icon: IconFunnel,    label: 'Campaign Sales Funnels' },
   { icon: IconLayout,    label: 'Landing Pages' },
   { icon: IconFlag,      label: 'Lot Flags & Banners' },
 ];
@@ -87,6 +85,9 @@ export default function About() {
                 <span>Founder, Marino Marketing Solutions</span>
               </footer>
             </blockquote>
+            <div className="about-story__image-wrap">
+              <img src="/assets/handshake_dealership.png" alt="Nick Ellis shaking hands with a local dealership owner" className="about-story__image" loading="lazy" />
+            </div>
           </aside>
         </div>
       </section>

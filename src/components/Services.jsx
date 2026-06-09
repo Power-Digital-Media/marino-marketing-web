@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Services.css';
 
 export default function Services() {
@@ -8,39 +8,39 @@ export default function Services() {
     digital: [
       {
         icon: '💻',
-        title: 'High-Performance Web Dev',
-        description: 'Bespoke, lightning-fast web applications built on Next.js, React, and Vite. Designed with micro-animations and fully optimized for local search engine authority (SEO).',
+        title: 'High-Velocity Web Design',
+        description: 'Blistering-fast Next.js, React, and Vite web architectures. Fully custom, mobile-friendly layouts engineered for lightning-speed PageSpeed indices and search engine rankings.',
         outcome: 'Best For: Page Speed & Search Rankings'
+      },
+      {
+        icon: '⚙️',
+        title: 'Bespoke Custom Applications',
+        description: 'Tailor-made customer portals, database integrations, back-office dashboards, and API solutions designed to automate and streamline your business workflows.',
+        outcome: 'Best For: Business Automation & Integration'
+      },
+      {
+        icon: '📈',
+        title: 'High-Velocity Growth Marketing',
+        description: 'Hyper-targeted advertising campaigns on Meta and Google. Custom product catalog ads and Reels built to scale local customer traffic and drive sales.',
+        outcome: 'Best For: Direct Lead Conversion & ROAS'
       },
       {
         icon: '🔄',
         title: 'CRM & Pipeline Automation',
-        description: 'Synchronize your website forms directly with your customer database or sales pipes. Automatically route leads, schedule appointments, and organize client pipelines.',
-        outcome: 'Best For: Efficiency & Lead Retention'
+        description: 'Sync website forms and quote requests with database pipes. Automatically route leads, dispatch SMS alerts, and track client interactions in real-time.',
+        outcome: 'Best For: SMS Alerts & Customer Retention'
       },
       {
-        icon: '✉️',
-        title: 'Email Marketing Automations',
-        description: 'Keep your customers engaged without manual effort. Custom automated newsletters, drip campaigns, product catalogs, and promotional deal broadcasts.',
-        outcome: 'Best For: Recurring Customer Revenue'
-      },
-      {
-        icon: '🚗',
-        title: 'Deep-Funnel Digital Leads',
-        description: 'Access our regional auto marketing networks. We promote, market, and distribute your dealer inventory directly to generate calls, chats, and scheduled visits.',
-        outcome: 'Best For: Automotive Retail Conversions'
-      },
-      {
-        icon: '📢',
-        title: 'Paid Search & Social Ads',
-        description: 'Targeted hyper-local campaigns on Facebook, Instagram, and Google. One-click ad systems designed to send potential buyers directly to your service or landing pages.',
-        outcome: 'Best For: High-Speed Traffic Boost'
+        icon: '🎯',
+        title: 'Campaign Sales Funnels',
+        description: 'High-performance multi-step sales funnels and promotional landing pages built to turn cold traffic into ready-to-buy local prospects.',
+        outcome: 'Best For: Promotion Campaigns & Ad Conversions'
       },
       {
         icon: '👥',
-        title: 'Google & Facebook Business',
-        description: 'Weekly postings, content updates, and active reputation management of your local Google My Business and Facebook pages to keep your business top-of-mind.',
-        outcome: 'Best For: Local Visibility & Trust'
+        title: 'Local Maps & Rep Management',
+        description: 'Active reputation management, map pack optimization, and local directory listings to place your business at the top of local maps searches.',
+        outcome: 'Best For: Storefront Traffic & Local Rank'
       }
     ],
     physical: [
